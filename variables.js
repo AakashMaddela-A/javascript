@@ -64,7 +64,7 @@ var message = 100;
 */
 
 ///////////////////////////////////////////////////
-//const keyword
+//const keyword -> final value cant modified data
 const info = 100;
 // info = 200;  // error assignment to constant variable.
 
@@ -81,3 +81,24 @@ arr.shift(); // removing first
 console.log(arr);
 arr.unshift(1); // adding first
 console.log(arr);
+
+//////////////////////////////////////////////////
+const obj = {
+  sub_one: "Angular12",
+  sub_two: "NodeJS",
+  sub_three: "MongoDB",
+};
+
+// obj = {}; // assignment to constant variable
+
+obj.sub_one = "Angular13";
+obj.sub_two = "Deno";
+obj.sub_three = "CassandraDB";
+console.log(obj);
+
+//////////////////////////////////////////
+var dat = Symbol(100);
+console.log(dat); //symbol(100)
+console.log(Symbol.for("dat"));
+
+console.log(typeof dat); //symbol

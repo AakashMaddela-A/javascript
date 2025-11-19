@@ -1,0 +1,29 @@
+<!--
+<script>
+  function fun_one() {
+    return "welcome to js";
+  }
+  console.log(fun_one());  // welcome to js
+</script>
+-->
+
+<!--
+<script>
+  function fun_one() {
+    return "hello";
+  }
+
+  console.log(fun_one); //defination
+</script>
+-->
+
+<script>
+  function fun_one(arg1, arg2, arg3) {
+    console.log(arg1, arg2, arg3);
+  }
+  fun_one("Angular13", "NodeJS", "MongoDb"); // Angular13 NodeJS MongoDB
+  fun_one(); // undefined undefined undefined
+  fun_one(null, null, null); //null null null
+  fun_one(undefined, undefined, "hello3"); // undefined undefined hello3
+  fun_one(undefined, "hello2");
+</script>
