@@ -6,6 +6,7 @@
   console.log(fun_one());  // welcome to js
 </script>
 -->
+/////////////////////////////////////////////////
 
 <!--
 <script>
@@ -17,6 +18,8 @@
 </script>
 -->
 
+////////////////////////////////////////////////////
+<!--
 <script>
   function fun_one(arg1, arg2, arg3) {
     console.log(arg1, arg2, arg3);
@@ -26,4 +29,311 @@
   fun_one(null, null, null); //null null null
   fun_one(undefined, undefined, "hello3"); // undefined undefined hello3
   fun_one(undefined, "hello2");
+</script>
+-->
+
+///////////////////////////////////////////////////
+
+<!--
+<script>
+  function fun_one() {
+    return fun_two;
+  }
+
+  function fun_two() {
+    return "hello";
+  }
+
+  console.log(fun_one); // function one defination
+  console.log(fun_one()()); // hello
+</script>
+-->
+
+/////////////////////////////////////////////////
+
+<!--
+<script>
+  let arr = [];
+
+  function fun_one() {
+    return "hello";
+  }
+
+  for (let i = 0; i < 5; i++) {
+    arr.push(fun_one());
+  }
+  for (let j = 0; j < arr.length; j++) {
+    console.log(arr[j]);
+  }
+</script>
+-->
+
+//////////////////////////////////////////////////
+
+<!--
+<script>
+  let arr = [];
+
+  function fun_one() {
+    return "hello";
+  }
+  for (let i = 0; i < 5; i++) {
+    arr.push(fun_one);
+  }
+  for (let j = 0; j < 5; j++) {
+    console.log(arr[j]()); //hello
+  }
+</script>
+-->
+
+//////////////////////////////////////////////////
+<!--
+<script>
+  function fun_one() {
+    return "hello";
+  }
+  setTimeout(function () {
+    console.log(fun_one());
+  }, 5000); // hello
+</script>
+-->
+
+/////////////////////////////////////////////////////
+<!--
+<script>
+  function fun_one() {
+    return "hello";
+  }
+
+  let count = 0; // counter
+
+  const intervalId = setInterval(function () {
+    console.log(fun_one());
+    count++;
+
+    if (count === 10) {
+      clearInterval(intervalId); // stop after 10 times
+    }
+  }, 5000);
+</script>
+-->
+
+/////////////////////////////////////////////////
+<!--
+<script>
+  function fun_one() {
+    return "hello";
+  }
+
+  setInterval(function () {
+    console.log(fun_one());
+  }, 2000);
+</script>
+-->
+
+/////////////////////////////////////////////////////
+<!---
+<script>
+  for (var i = 0; i < 5; i++) {
+    setTimeout(function () {
+      console.log(i);
+    }, 5000);
+  }
+  // var :  5 5 5 5 5
+  // let :  0 1 2 3 4
+</script>
+-->
+///////////////////////////////////////////////////////
+<!--
+////////////////////////////////////////////////////
+Rest Parameters in functions -> it is used to store the more than one value in single argument.
+* '...' called as spread operator
+* it is introduced in ES6.
+
+1. we can take only one spread operator per function
+2. position of spread operator always last in occurances
+-->
+////////////////////////////////////////////////////
+<!--
+<script>
+  function fun_one(...arg1) {
+    console.log(arg1);
+  }
+  fun_one("hello_1", "hello_2");
+  //['hello_1', 'hello_2']
+  fun_one("hello1", "hello2", "hello3", "hello4");
+  //['hello1', 'hello2', 'hello3', 'hello4']
+  fun_one(); // []
+  fun_one(undefined); // [undefined]
+  fun_one(undefined, null); // [undefined, null]
+</script>
+-->
+
+/////////////////////////////////////////////////////
+<!--
+<script>
+  function fun_one(...arg1, ...arg2) {} // errror
+</script>
+-->
+
+/////////////////////////////////////////////////////
+<!--
+<script>
+  function fun_one(arg1, ...arg2) {
+    console.log(arg1, arg2);
+  }
+  fun_one(); // undefined,[]
+  fun_one(undefined); //undefined,[]
+  fun_one("hello1"); //hello1,[]
+  fun_one("hello1", "hello2"); //hello1 , [hello2]
+  fun_one("hello1", "hello2", "hello3"); // hello1, [hello2,hello3]
+  fun_one(undefined, undefined); //undefined, [undefined]
+  fun_one(null,null); // null, [null]
+</script>
+-->
+
+////////////////////////////////////////////////////
+
+<!--
+<script>
+  function fun_one(...arg1, arg2){};  // rest paramete must be last.
+</script>
+-->
+
+////////////////////////////////////////////////////
+
+<!--
+<script>
+  function fun_one(...arg1, ...arg2, arg3){}  // rest parameter must be last formal parameter
+</script>
+-->
+
+/////////////////////////////////////////////////////
+<!-- Default parameters in functions-->
+<!-- while defining the functions , we will assign some default value to parameters.-->
+<!-- this concept introduced in ES6. -->
+
+///////////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(arg1 = "hello1", arg2 = "hello2", arg3 = "hello3") {
+    console.log(arg1, arg2, arg3);
+  }
+  fun_one(); // hello1 hello2 hello3
+  fun_one("reactjs"); // reactjs, hello2, hello3
+  fun_one(undefined, undefined, undefined);
+  //   hello1 hello2 hello3
+  fun_one(null, null, null); // null null null
+  fun_one(undefined, undefined, "welcome3");
+  // hello1 hello2 welcome3
+</script> -->
+
+///////////////////////////////////////////////////
+<!-- arg1 is regular parameter and arg2 is default parameter. -->
+///////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(arg1, arg2 = "hello2") {
+    console.log(arg1, arg2);
+  }
+  fun_one(); // undefined, hello2
+  fun_one(undefined); // undefined , hello2
+  fun_one("hello1"); // hello1 , hello2
+  fun_one("null"); // null , hello2
+  fun_one(undefined, undefined); // undefined, hello2
+  fun_one(null, null); // null, null
+</script> -->
+
+/////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(ag1, arg2 = "hello2", ...arg3) {
+    console.log(arg1, arg2, arg3);
+  }
+  fun_one(); // undefined, hello2, []
+  fun_one(undefined, undefined, undefined); // undefined, hello2, [undefined]
+  fun_one(null, null, null); // null,null,[null]
+  fun_one(hello1, undefined, "hello3"); //hello1, hello2, [hello3]
+  fun_one();
+</script> -->
+
+//////////////////////////////////////////////////
+<!-- Arrow  functions -> the function without name called.
+ - these are also called as anonymous functions
+ - arrow functions behaves like callback functions.
+ - we will represent arrow functions with '=>'
+ - arrow functions introduced in 'ES6'
+ -
+ syntax:
+ 1. function defination
+ 2. function calling
+
+  var/let/const  variableName = (arg1,arg2,arg3,....argn) =>{
+  //business logic
+  }
+
+  variableName(param1,param2,param3);
+ -->
+
+<!-- <script>
+  let fun_one = () => {
+    return "hello";
+  };
+  console.log(fun_one); //function defination
+  console.log(fun_one()); //hello
+</script> -->
+
+/////////////////////////////////////////////////////
+<!-- 
+<script>
+  let fun_one = () => console.log("hello");
+  fun_one(); // hello
+</script> -->
+
+/////////////////////////////////////////////////
+
+<!-- <script>
+  let fun_one = (arg1, arg2, arg3) => {
+    console.log(arg1, arg2, arg3);
+  };
+  fun_one("hello1", "hello2", "hello3");
+  // hello1 hello2 hello3
+  fun_one(); // undefined, undefined, undefined
+  fun_one(null, null, null); // null null null
+</script> -->
+
+////////////////////////////////////////////////
+
+<!-- <script>
+  let fun_one = (arg1, arg2, arg3) => {
+    console.log(arg1(), arg2(), arg3());
+  };
+  fun_one(
+    () => {
+      return "hello1";
+    },
+    () => {
+      return "hello2";
+    },
+    () => {
+      return "hello3";
+    }
+  ); // hello1 hello2 hello3
+</script> -->
+
+/////////////////////////////////////////////////
+<script>
+  let initialize = (user, getElementsByEmail, getElementsById) => {
+    console.log(user, getElementsByEmail(), getElementsById());
+  };
+
+  let getElementsByEmail = () => {
+    return "hr@aakash.com";
+  };
+
+  let getElementsById = () => {
+    return "aakash";
+  };
+
+  initialize("hello1", getElementsByEmail, getElementsById);
 </script>
