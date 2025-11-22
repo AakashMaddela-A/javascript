@@ -24,3 +24,26 @@ function functionName(arg1, arg2, argn.....){
 *****************************
 functionName(param1, param2, ..........param n);
 */
+
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// Optional parameters in functions
+// ***************************************************
+
+// - while calling the functions we will make few parameters are optional.
+//- this concept introduced in ES6
+// -optional parameters we will represent with '?'
+//- optional parameters will work in typescript
+//- superset of javascript called as typescript.
+// - we will save typescript files with '.ts' extension.
+// - typescript follows the OOPS.
+// - Typescript is programming language.
+// - browsers wont understand typescript.
+// - so we need to convert typescript to equavalent javascript.
+// - conversion from typescript to equavalent javascript called as transpilation.
+
+/////////////////////////////////////////////////////////////////
+// Installation of typescript
+// *****************************************
+
+// -> npm install -g typescript
