@@ -25,7 +25,7 @@ fun_one("hello1", "hello2"); // hello1 hello2
 ////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 
-function fun_one(arg1: string, arg2?: string, ...arg3: string[]): any {
+function fu_one(arg1: string, arg2?: string, ...arg3: string[]): any {
   console.log(arg1, arg2, arg3);
 }
 

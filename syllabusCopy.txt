@@ -1,16 +1,29 @@
 1. Variables
+
    var / let / const
+
 2. functions are reused the business logic.
+
 3. arrays are collection of elements.
+
 4. JSON is javascript object notation.( to transfer the data over the network)
+
 5.promises are executing the tasks sequentially.
+
 6.DOM Manipulation is the working on document object.
+
 7.callbacks are to catch responses.
+
 8.events handling
+
 9. event bubbling & event capturing
+
 10. debouncing
+
 11.throttling
+
 12. AJAX calls
+
 13. closures
 
 ////////////////////////////////////////////////////
