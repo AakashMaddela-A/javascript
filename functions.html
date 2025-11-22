@@ -322,7 +322,7 @@ Rest Parameters in functions -> it is used to store the more than one value in s
 </script> -->
 
 /////////////////////////////////////////////////
-<script>
+<!-- <script>
   let initialize = (user, getElementsByEmail, getElementsById) => {
     console.log(user, getElementsByEmail(), getElementsById());
   };
@@ -336,4 +336,364 @@ Rest Parameters in functions -> it is used to store the more than one value in s
   };
 
   initialize("hello1", getElementsByEmail, getElementsById);
+</script> -->
+
+////////////////////////////////////////////////////////////////
+<!-- we can have arguments and function as same name -->
+<!-- <script>
+  let initialize = (user, getElementsByEmail, getElementsById) => {
+    console.log(user, getElementsByEmail(), getElementsById());
+    // hello1 hello2 hello3
+  };
+
+  let getElementsByEmail = () => {
+    return "hello2";
+  };
+  let getElementsById = () => {
+    return "hello2";
+  };
+
+  initialize("hello1", getElementsByEmail, getElementsById);
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let arr = [];
+  for (let i = 0; i < 5; i++) {
+    arr.push(() => {
+      return "hello";
+    });
+  }
+  arr[0]; // only function defination
+  for (let j = 0; j < arr.length; j++) {
+    console.log(arr[j]());
+  }
+</script> -->
+
+////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+
+<!-- IIFE  (immediate invokable functional expression)
+ - it introduced in ES9
+ - these functions called as self invoked functions
+ -syntax:
+ **********************
+  ((arg1,arg2,arg3,....argn)=>{
+  busineess logic
+  })(param1,param2,param3,....paramn)
+  -->
+
+///////////////////////////////////////////////////////////
+
+<!-- <script>
+  (() => {
+    console.log("Welcome to IIFE"); // welcome to IIFE
+  })();
+</script> -->
+
+///////////////////////////////////////////////////////////
+
+<!-- <script>
+  let i = (() => {
+    return "welcome to IIFE";
+  })();
+  console.log(i); //welcome to IIFE
+</script> -->
+
+//////////////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(arg1, arg2, arg3) {
+    console.log(arg1, arg2, arg3); // hello1 hello2 hello3
+  }
+  fun_one(
+    (() => {
+      return "hello1";
+    })(),
+    (() => {
+      return "hello2";
+    })(),
+    (() => {
+      return "hello3";
+    })()
+  );
+</script> -->
+
+////////////////////////////////////////////////////////////
+<!-- <script>
+  ((arg1, arg2, arg3) => {
+    console.log(arg1, arg2, arg3);  //hello1 hello2 hello3
+  })("hello1", "hello2", "hello3");
+</script> -->
+
+/////////////////////////////////////////////////////////////
+
+<!-- <script>
+  for (var i = 0; i < 5; i++) {
+    // setTimeout(function () {}, 5000);
+    ((i) => {
+      setTimeout(() => {
+        console.log(i);
+      }, 5000);
+    })(i);
+  }
+</script> -->
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+<!--constructor functions -> create the classes like structures before ES6 version
+- in constructor functions(variables and functions) should start with 'this' keyword.
+- this keyword representing the current class members.
+- we will create the object with the help of this keyword. -->
+
+///////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function class_one() {
+    this.sub_one = "Angular13";
+    this.sub_two = "NodeJS";
+    this.sub_three = "MongoDb";
+  }
+
+  let obj1 = new class_one();
+  console.log(obj1.sub_one, obj1.sub_two, obj1.sub_three); //Angular13 NodeJS MongoDb
+
+  let obj2 = new class_one();
+  console.log(obj1.sub_one, obj1.sub_two, obj1.sub_three); //Angular13 NodeJS MongoDb
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function class_one() {
+    this.wish = "javascript";
+    this.my_fun = function () {
+      return `welcome to ${this.wish}`;
+    };
+  }
+  let obj1 = new class_one();
+  console.log(obj1.my_fun()); // welcome to javascript
+</script> -->
+
+//////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function class_one() {
+    this.var_one = "hello1";
+    this.var_two = "hello2";
+    this.var_three = "hello3";
+
+    this.fun_one = function () {
+      return this.var_one;
+    };
+
+    this.fun_two = function () {
+      return this.var_two;
+    };
+
+    this.fun_three = function () {
+      return this.var_three;
+    };
+  }
+
+  let obj1 = new class_one();
+  console.log(obj1.fun_one(), obj1.fun_two(), obj1.fun_three());
+  // hello1 hello2 hello3
+</script> -->
+
+/////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function class_one(arg1, arg2, arg3) {
+    this.var_one = arg1;
+    this.var_two = arg2;
+    this.var_three = arg3;
+  }
+
+  let obj1 = new class_one("hello", "hello2", "hello3");
+  console.log(obj1.var_one, obj1.var_two, obj1.var_three);
+  //hello hello2 hello3
+
+  let obj2 = new class_one("welcome1", "welcome2", "welcome3");
+  console.log(obj2.var_one, obj2.var_two, obj2.var_three);
+  //welcome1 welcome2 welcome3
+</script> -->
+
+//////////////////////////////////////////////////////////////
+<!-- // prototype will refer the class
+
+<script>
+  function class_one() {
+    //
+  }
+  class_one.prototype.var_one = "hello1";
+  let obj1 = new class_one();
+  console.log(obj1.var_one); // hello1
+</script> -->
+
+//////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function class_one() {
+    //
+  }
+  class_one.prototype.sub = "javascript";
+  class_one.prototype.fun_one = function () {
+    return "hello";
+  };
+
+  let obj1 = new class_one();
+  console.log(obj1.sub, obj1.fun_one()); // javascript hello
+</script> -->
+
+//////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function class_one() {
+    //
+  }
+
+  class_one.prototype.var_one = "hello1";
+
+  function class_two() {
+    //
+  }
+
+  class_two.prototype = Object.create(class_one.prototype);
+  class_two.prototype.var_two = "hello_2";
+
+  let obj1 = new class_two();
+  console.log(obj1.var_one, obj1.var_two); // hello1 hello2
+</script> -->
+
+/////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function class_one() {
+    //
+  }
+
+  class_one.prototype.fun_one = function () {
+    return "hello1";
+  };
+
+  function class_two() {
+    //
+  }
+
+  class_two.prototype = Object.create(class_one.prototype);
+  class_two.prototype.fun_two = function () {
+    return "hello2";
+  };
+
+  function class_three() {
+    //
+  }
+
+  class_three.prototype = Object.create(class_two.prototype);
+  class_three.prototype.fun_three = function () {
+    return "hello3";
+  };
+
+  let obj1 = new class_one();
+  console.log(obj1.fun_one()); // hello1
+
+  let obj2 = new class_two();
+  console.log(obj2.fun_one(), obj2.fun_two()); // hello1 hello2
+
+  let obj3 = new class_three();
+  console.log(obj3.fun_one(), obj3.fun_two(), obj3.fun_three()); // hello1 hello2 hello3
+</script> -->
+
+/////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function class_one() {
+    //
+  }
+
+  class_one.prototype.dbFun = function () {
+    return "data from oracle db soon";
+  };
+
+  function class_two() {
+    //
+  }
+
+  class_two.prototype = Object.create(class_one.prototype);
+  class_two.prototype.dbFun = function () {
+    return "data from mongodb database soon...!";
+  };
+
+  let obj1 = new class_two();
+  console.log(obj1.dbFun()); // data from mongodb database soon
+</script> -->
+
+//////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+<!-- Generators
+ *******************
+  to control the statements inside the functions. 
+
+  - generators hould have '*'
+  - each statement should have 'yield' statement.
+  - generators will return 'cursor' mechanism.
+  - by using cursors we can control statements.
+-->
+
+<!-- <script>
+  function* fun_one() {
+    yield "st-1";
+    yield "st-2";
+    yield "st-3";
+    yield "st-4";
+    yield "st-5";
+  }
+
+  let cursor = fun_one();
+  console.log(cursor.next());
+  console.log(cursor.next());
+  console.log(cursor.next());
+  console.log(cursor.next());
+  console.log(cursor.next());
+</script> -->
+
+//////////////////////////////////////////////////////////////////////
+<!-- <script>
+  function* fun_one() {
+    yield 100;
+    yield 200;
+    return 300;
+    yield 400;
+  }
+
+  let cursor = fun_one();
+  console.log(cursor.next());
+  console.log(cursor.next());
+  console.log(cursor.next());
+  console.log(cursor.next());
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<script>
+  function* fun_one() {
+    yield 100;
+    yield* fun_two();
+    yield* fun_three();
+    yield 400;
+  }
+  function* fun_two() {
+    yield 300;
+  }
+  function* fun_three() {
+    yield 200;
+  }
+
+  let cursor = fun_one();
+  for (let i = 0; i < 5; i++) {
+    console.log(cursor.next());
+  }
 </script>
