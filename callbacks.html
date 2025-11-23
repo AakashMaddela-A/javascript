@@ -94,3 +94,143 @@
   }
   calc(5, addition);
 </script> -->
+
+////////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(arg1) {
+    console.log(arg1); // fun_two defination
+    console.log(arg1()); // hello
+  }
+  function fun_two() {
+    return "hello";
+  }
+
+  fun_one(fun_two);
+</script> -->
+
+////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(arg1, arg2, arg3) {
+    console.log(arg1(), arg2(), arg3());
+  }
+
+  function fun_two() {
+    return "hello1";
+  }
+
+  function fun_three() {
+    return "hello2";
+  }
+
+  function fun_four() {
+    return "hello3";
+  }
+
+  fun_one(fun_two, fun_three, fun_four);
+  // hello1 hello2 hello3
+</script> -->
+
+///////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(arg1) {
+    console.log(arg1()); // hello
+  }
+
+  fun_one(function fun_two() {
+    return "hello";
+  });
+</script> -->
+
+////////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(arg1) {
+    return arg1("hello"); // giving parameter
+  }
+
+  fun_one(function fun_two(param1) {
+    console.log(param1); // hello
+  });
+</script> -->
+
+///////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(arg1, arg2, arg3) {
+    return arg1("hello1") + "..." + arg2("hello2") + "..." + arg3("hello3");
+  }
+
+  fun_one(
+    function fun_two(param1) {
+      console.log(param1); //hello1
+    },
+    function fun_three(param2) {
+      console.log(param2); // hello2
+    },
+    function fun_four(param3) {
+      console.log(param3); // hello3
+    }
+  );
+</script> -->
+
+/////////////////////////////////////////////////////
+
+<!-- <script>
+  function fun_one(posRes, errRes) {
+    return posRes("success") + "..." + errRes("error");
+  }
+  fun_one(
+    (param1) => {
+      console.log(param1); // success
+    },
+    (param2) => {
+      console.log(param2); // error
+    }
+  );
+</script> -->
+
+/////////////////////////////////////////////////////
+
+<script>
+  let calc = (num, add) => {
+    return add(num + 5, false); //10
+  };
+
+  let sub = (num, callback) => {
+    // 10
+    return callback(num - 3, false); // 10-3=7
+  };
+
+  let mul = (num, callback) => {
+    return callback(num * 2, false); // 7*2=14
+  };
+
+  let div = (num, callback) => {
+    return callback(num / 2 + 3, false); // 14/2+3=10
+  };
+
+  calc(5, (addRes, error) => {
+    if (error == false) {
+      sub(addRes, (subRes, error) => {
+        if (!error) {
+          // console.log(subRes); // 7
+          mul(subRes, (mulRes, error) => {
+            if (!error) {
+              // console.log(mulRes); // 14
+              div(mulRes, (divRes, error) => {
+                if (!error) {
+                  console.log(divRes); // 10
+                }
+              });
+            }
+          });
+        }
+      });
+    }
+  });
+</script>
