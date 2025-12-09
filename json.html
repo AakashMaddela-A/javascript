@@ -1,0 +1,698 @@
+<!-- 
+ JSON
+ *****
+ JSON stands for javascript object notation.
+ - json also called as javascript objects.
+ - we can exchange the data in full stack application in two ways.
+    1. XML
+    2. JSON
+
+ - XML is heavy weight.
+ - JSON is light weight.
+ - JSON data suggested while transferring the data.
+ 
+ Syntax :
+ *******
+
+ 1.Objects ---- {}
+
+ 2.Arrays ----- []
+
+ 3.data ------ key & value pairs
+
+              key & value separated by using ':'.
+ -->
+
+//////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    sub_one: "ReactJS",
+    sub_two: "NodeJS",
+    sub_three: "MongoDB",
+  };
+
+  console.log(obj.sub_one, obj.sub_two, obj.sub_three); //ReactJS NodeJS MongoDB
+</script> -->
+
+///////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    obj1: { key1: "value1" },
+    obj2: { key2: "value2" },
+    obj3: { key3: "value3" },
+  };
+
+  console.log(obj.obj1.key1); //value1
+  console.log(obj.obj2.key2); // value2
+  console.log(obj.obj3.key3); // value3
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+    key2: "hello2",
+    key3: "hello3",
+  };
+
+  // for in loop -> iterate the json object
+  // ES6
+  // for ... in loop
+  for (let k in obj) {
+    console.log(k); // key1 key2 key3
+    console.log(typeof k); // string string string
+    console.log(obj[k]); // hello1 hello2 hello3
+  }
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    obj1: {
+      sub_one: "json",
+      sub_two: "reactjs",
+      sub_three: "deno",
+    },
+  };
+  // for ... in
+  // ES6
+  for (let key in obj.obj1) {
+    console.log(obj.obj1[key]); // json reactjs deno
+  }
+</script> -->
+
+////////////////////////////////////////////////////////////
+
+<!-- <script>
+  function dbfun() {
+    return "hello";
+  }
+
+  console.log(dbfun()); // hello
+  console.log(dbfun); // function defination
+</script> -->
+
+//////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    oracle: oracle, // oracle function defination
+    mysql: mysql, // mysql defination
+    mongodb: mongodb, // mongodb defination
+    cassandradb: cassandradb(), // casandradb function
+  };
+
+  function oracle() {
+    return "oracle connection soon....";
+  }
+
+  function mysql() {
+    return "mysql connection soon.....";
+  }
+
+  function mongodb() {
+    return "mongodb connection soon.....";
+  }
+
+  function cassandradb() {
+    return "cassandradb connection soon....";
+  }
+  
+
+  console.log(obj.oracle) // oracle function defination 
+
+  console.log(obj.oracle(), obj.mysql(), obj.mongodb(), obj.cassandradb);
+  // oracle connection soon.... mysql connection soon..... mongodb connection soon..... cassandradb connection soon....
+</script> -->
+
+////////////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: () => {
+      return "hello1";
+    },
+    key2: () => {
+      return "hello2";
+    },
+    key3: () => {
+      return "hello3";
+    },
+  };
+
+  console.log(obj.key1(), obj.key2(), obj.key3()); //hello1 hello2 hello3
+</script> -->
+
+//////////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "value1",
+    key2: "value2",
+    key3: "value3",
+  };
+  // to get only keys -> object is predefined and keys is function
+
+  console.log(Object.keys(obj)); // ['key1', 'key2', 'key3']
+  console.log(Object.values(obj)); // ['value1', 'value2', 'value3']
+</script> -->
+
+/////////////////////////////////////////////////////////////////////
+
+<!-- deep copy
+<script>
+  let obj1 = {
+    key1: "hello1",
+  };
+
+  let obj2 = { ...obj1 }; // deep copy
+
+  obj1.key1 = "original copy";
+  obj2.key1 = "Xerox copy";
+
+  console.log(obj1); // {key1: 'original copy'}
+  console.log(obj2); // {key1: 'Xerox copy'}
+</script> -->
+
+///////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+    key2: "hello2",
+    key3: "hello3",
+  };
+
+  console.log(obj); //{key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+
+  delete obj.key3;
+  console.log(obj); // {key1: 'hello1', key2: 'hello2'}
+</script> -->
+
+///////////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj1 = { key1: "hello1" };
+  let obj2 = { key2: "hello2" };
+  let obj3 = { key3: "hello3" };
+
+  let obj4 = { ...obj1, ...obj2, ...obj3 };
+  console.log(obj4); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+</script> -->
+
+///////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj1 = {};
+
+  obj1.key1 = "hello1"; // adding key values dynamically
+  obj1.key2 = "hello2";
+  obj1.key3 = "hello3";
+
+  console.log(obj1); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+</script> -->
+
+/////////////////////////////////////////////////////////////
+
+<!-- <script>
+  // update operations 
+
+  
+  let obj = {
+    key1: "hello1",
+    key2: "hello2",
+    key3: "hello3",
+  };
+
+  obj.key1 = "welcome1";
+  obj.key2 = "welcome2";
+  obj.key3 = "welcome3";
+
+  console.log(obj); // {key1: 'welcome1', key2: 'welcome2', key3: 'welcome3'}
+</script> -->
+
+//////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+    key2: "hello2",
+    key3: "hello3",
+  };
+
+  Object.freeze(obj); // locking obj
+
+  //read
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+
+  //add
+  obj.key4 = "hello4";
+  console.log(obj); // not added {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+
+  //update
+  obj.key1 = "welcome1";
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+
+  //delete
+  delete obj.key1;
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+</script> -->
+
+/////////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+    key2: "hello2",
+    key3: "hello3",
+  };
+
+  Object.seal(obj);
+
+  //read
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+
+  //add
+  obj.key4 = "hello4";
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+
+  // update
+  obj.key1 = "welcome1";
+  console.log(obj); // {key1: 'welcome1', key2: 'hello2', key3: 'hello3'}
+
+  //delete
+  delete obj.key1;
+  console.log(obj); // {key1: 'welcome1', key2: 'hello2', key3: 'hello3'}
+</script> -->
+
+/////////////////////////////////////////////////////////////////////
+
+<!--  freeze                                     seal
+
+  read allow                                    read allow
+  write not allow                               write not allow
+  update not allow                              update allow
+  delete not allow                               delete not allow -->
+
+/////////////////////////////////////////////////////////////////////
+<!--  
+<script>
+  let obj = {
+    key1: "hello1",
+  };
+
+  // adding key2 and not updatable and delete
+  Object.defineProperty(obj, "key2", { value: "hello2", writable: false });
+  // adding key3 and updatable and delete
+  Object.defineProperty(obj, "key3", { value: "hello3", writable: true });
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+
+  // updating not happen
+  obj.key2 = "welcome2";
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+  // updating happen
+  obj.key3 = "welcome3";
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'welcome3'}
+
+  // deleting
+  delete obj.key2;
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'welcome3'}
+  delete obj.key3;
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'welcome3'}
+</script>
+
+-->
+
+<!--  
+/////////////////////////////////////////////////////////////////////
+<script>
+  let obj = {
+    key1: "hello1",
+  };
+  Object.defineProperties(obj, {
+    key2: { value: "hello2", writable: false },
+    key3: { value: "hello3", writable: true },
+  });
+
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+
+  obj.key2 = "welcome2";
+  obj.key3 = "welcome3";
+  console.log(obj); // {key1: 'hello1', key2: 'hello2', key3: 'welcome3'}
+</script>
+
+-->
+
+///////////////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+    123: "hello2",
+  };
+
+  console.log(obj.key1); // hello1
+  console.log(obj[123]); // hello2
+</script> -->
+
+//////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    1: "hello1",
+    2: "hello2",
+    3: "hello3",
+  };
+
+  console.log(obj[1], obj[2], obj[3]);
+</script> -->
+
+//////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {};
+
+  let key1 = {};
+  let value1 = "hello1";
+  obj[key1] = value1;
+
+  let key2 = {};
+  let value2 = "hello2";
+  obj[key2] = value2;
+
+  console.log(obj); // {[object Object]: 'hello2'}
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+    key1: "hello2",
+  };
+
+  console.log(obj); // {key1 : hello2}
+</script> -->
+
+///////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+    key2: "hello1",
+  };
+
+  console.log(obj); // {key1: 'hello1', key2: 'hello1'}
+</script> -->
+
+///////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+    key2: "hello2",
+    key3: "hello3",
+  };
+
+  console.log(obj.key1, obj.key2, obj.key3); // hello1 hello2 hello3
+  console.log(obj["key1"], obj["key2"], obj["key3"]); // hello1 hello2 hello3
+  const { key1, key2, key3 } = obj;
+  console.log(key1, key2, key3); // hello1 hello2 hello3
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let myson_function = {
+    money: { amount: 1000 },
+    gold: { weight: "1gr" },
+    book: { comp: "react" },
+    pen: { company: "reynolds" },
+  };
+
+  let { money, gold, book, pen } = myson_function; // destructuring
+  let { amount } = money;
+  let { weight } = gold;
+  let { comp } = book;
+  let { company } = pen;
+
+  console.log(amount, weight, comp, company);
+</script> -->
+
+/////////////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let arr = [
+    { eid: 111, ename: "aakash", esal: 10000 },
+    { eid: 222, ename: "ramesh", esal: 20000 },
+    { eid: 333, ename: "suresh", esal: 30000 },
+    { eid: 444, ename: "santosh", esal: 40000 },
+    { eid: 555, ename: "sandeep", esal: 50000 },
+  ];
+
+  document.write(`
+    <table border='1'
+      cellpadding='10px'
+      cellspacing='10px'
+      align='center'>
+    <tr>
+      <th>E_ID</th>
+      <th>E_NAME</th>
+      <th>E_SAL</th>
+    </tr>
+  `);
+
+  arr.forEach((rec) => {
+    document.write(`<tr>
+        <td>${rec.eid}</td>
+        <td>${rec.ename}</td>
+        <td>${rec.esal}</td>
+        </tr>`);
+  });
+
+  document.write(`</table>`);
+</script> -->
+
+//////////////////////////////////////////////////////////////////
+
+<!-- <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
+<script>
+  let products = [
+    {
+      name: "shirt1",
+      cost: 100,
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.Sgc31GBnLaoqG30SKcWhQwHaJ4?pid=Api&P=0&h=180",
+    },
+    {
+      name: "shirt2",
+      cost: 200,
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.Sgc31GBnLaoqG30SKcWhQwHaJ4?pid=Api&P=0&h=180",
+    },
+    {
+      name: "shirt3",
+      cost: 300,
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.Sgc31GBnLaoqG30SKcWhQwHaJ4?pid=Api&P=0&h=180",
+    },
+    {
+      name: "shirt4",
+      cost: 400,
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.Sgc31GBnLaoqG30SKcWhQwHaJ4?pid=Api&P=0&h=180",
+    },
+    {
+      name: "shirt5",
+      cost: 500,
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.Sgc31GBnLaoqG30SKcWhQwHaJ4?pid=Api&P=0&h=180",
+    },
+    {
+      name: "shirt6",
+      cost: 600,
+      image:
+        "https://tse1.mm.bing.net/th/id/OIP.Sgc31GBnLaoqG30SKcWhQwHaJ4?pid=Api&P=0&h=180",
+    },
+  ];
+
+  document.write(`<table border='1'
+  cellpadding='10px'
+  cellspacing='10px'
+  align:'center'>
+  <tr>
+    <th>Name</th>
+    <th>Cost</th>
+    <th>Image</th>
+    <th>Actions</th>
+  </tr>`);
+
+  products.forEach((record) => {
+    document.write(`
+      <tr>
+        <td>${record.name}</td>
+        <td>${record.cost}</td>
+        <td><img width='20px' src=${record.image}</td>
+        <td><i class='fa fa-trash-o'> &nbsp; &nbsp; <i class='fa fa-edit'></td>
+      </tr>
+    `);
+  });
+</script> -->
+
+/////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = { key1: "hello1" };
+  console.log(typeof obj); // object
+
+
+  // json to string
+
+  let str = JSON.stringify(obj);
+  console.log(typeof str); // string
+</script> -->
+
+///////////////////////////////////////////////////////////////
+
+<!-- 
+1. JSON.stringify()  --------  obj -----  string
+2. JSON.parse() --------- string ----- object
+-->
+
+////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = { key1: "hello1" };
+  console.log(typeof obj); // object
+
+  let str = JSON.stringify(obj);
+  console.log(typeof str); // string
+
+  let obj1 = JSON.parse(str);
+  console.log(typeof obj1); // object
+</script> -->
+
+/////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = { key1: "hello1", key2: "hello2", key3: "hello3" };
+  console.log(obj.hasOwnProperty("key1")); // true
+  console.log(obj.hasOwnProperty("key2")); // true
+  console.log(obj.hasOwnProperty("key3")); // true
+  console.log(obj.hasOwnProperty("key4")); // false
+</script> -->
+
+/////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    key1: "hello1",
+  };
+
+  //check object is empty or not
+
+  // console.log(
+  //   Object.keys(obj).length == 0
+  //     ? console.log("empty")
+  //     : console.log("Not Empty")
+  // );
+
+  // Object.values(obj).length == 0
+  //   ? console.log("Empty")
+  //   : console.log("Not Empty");
+
+</script> -->
+
+//////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj = {
+    a: "b",
+    c: "d",
+    e: "f",
+  };
+
+  let arr = Object.entries(obj);
+  console.log(arr);
+</script> -->
+
+//////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let obj1 = { key1: "hello1" };
+  let obj2 = { key2: "hello2" };
+  let obj3 = { key3: "hello3" };
+
+  console.log(Object.assign(obj1, obj2, obj3)); // {key1: 'hello1', key2: 'hello2', key3: 'hello3'}
+</script> -->
+
+///////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let arr = [100, 200, 300, 400, 500]; // >=300
+
+  console.log(
+    arr.filter((element) => {
+      return element >= 300;
+    })
+  ); // // [300, 400, 500]
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let arr = [100, 200, 300, 400, 500];
+
+  console.log(
+    arr
+      .filter((element) => {
+        return element == 300;
+      })
+      .map((element) => {
+        return { key: "element" };
+      })
+  ); 
+</script> -->
+
+//////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let arr = [
+    { price: 100 },
+    { price: 200 },
+    { price: 300 },
+    { price: 400 },
+    { price: 500 },
+  ];
+
+  console.log(
+    arr.filter((element) => {
+      return element.price >= 300;
+    })
+  );
+</script> -->
+
+/////////////////////////////////////////////////////////////////////
+
+<!-- <script>
+  let key1 = "hello1";
+  let key2 = "hello2";
+  let obj = {
+    key1,
+    key2,
+  };
+
+  console.log(obj); // {key1: 'hello1', key2: 'hello2'}
+</script> -->
+
+////////////////////////////////////////////////////////////////
+
+<script></script>
