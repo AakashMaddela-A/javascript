@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "aakash",
+      "cost": 10000
+    },
+    {
+      "id": "2",
+      "name": "ramesh",
+      "cost": 20000
+    },
+    {
+      "id": "5",
+      "name": "kamesh",
+      "cost": 50000
+    }
+  ]
+}

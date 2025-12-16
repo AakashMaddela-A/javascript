@@ -1,0 +1,62 @@
+1. Variables
+
+   var / let / const
+
+2. functions are reused the business logic.
+
+3. arrays are collection of elements.
+
+4. JSON is javascript object notation.( to transfer the data over the network)
+
+5.promises are executing the tasks sequentially.
+
+6.DOM Manipulation is the working on document object.
+
+7.callbacks are to catch responses.
+
+8.events handling
+
+9. event bubbling & event capturing
+
+10. debouncing
+
+11.throttling
+
+12. AJAX calls
+
+13. closures
+
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+Introduction:
+1. javascript is the scripting languages
+2. javascript is released by netscape company
+3. it creates the  application of angular , react , nodejs, vuejs, and static web pages to dynamic web pages.
+4. the current version of js is ES 13.
+5. we can execute in two ways :
+    node tool in nodejs and browser engine.
+6. js is the object based scripting language.(it makes the ready made objects)
+ex: date, window, document, console.
+7. we will include javascript to webpages by usng script tag.
+8. (js)execution of line by line called is synchronous execution.
+9. console is the predefined object provided by the vendor and log is the predefined function.
+
+///////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////
+//variables
+// variables are used to store the data. string, number, boolean, object....
+// we can declare the variables by using var, let or const.
+// let and const keywords introoduced in ES6.
+// variables should contain a-z, A-Z, 0-9, $ and _
+// variables shouldnot start with digits.
+/*
+syntax:
+ var, let, const variblename=value;
+*/
+
+
+
+
+
+
