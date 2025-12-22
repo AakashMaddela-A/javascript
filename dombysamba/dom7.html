@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .gparent{
+                width: 500px;
+                height: 500px;
+                background-color: red;
+            }
+
+            .parent{
+                width: 400px;
+                height: 200px;
+                margin:20px 10px;
+                background-color: rgb(218, 218, 60);
+                display: flex;
+            }
+
+            .child{
+                width: 100px;
+                height: 100px;
+                margin: 20px;
+                background-color: rgb(139, 54, 54);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grand-parent" class="gparent">
+            <div id="parent1" class="parent">
+                <div id="child-one" class="child"></div>
+                <div id="child-two" class="child"></div>
+            </div>
+
+            <div id="parent2" class="parent">
+                <div id="child-three" class="child"></div>
+                <div id="child-four" class="child"></div>
+            </div>
+        </div>
+    </body>
+
+
+    <script>
+        // get the reference of grand-parent
+
+        /*
+        // sol-1
+        document.getElementById('grand-parent').style.backgroundColor='green';
+        document.getElementById('parent1').style.backgroundColor='yellow';
+        document.getElementById('parent2').style.backgroundColor='yellow';
+        document.getElementById('child-one').style.backgroundColor='pink';
+        document.getElementById('child-two').style.backgroundColor='pink';
+        document.getElementById('child-three').style.backgroundColor='pink';
+        document.getElementById('child-four').style.backgroundColor='pink';
+        */
+
+//////////////////////////////////////////////////////////////////
+
+
+        // sol-2
+        /*
+        // querySelector -> id , class
+        document.querySelector('#grand-parent').style.backgroundColor='green';
+        document.querySelector('#parent1').style.backgroundColor='yellow';
+        document.querySelector('#parent2').style.backgroundColor='yellow';
+        document.querySelector('#child-one').style.backgroundColor='pink';
+        document.querySelector('#child-two').style.backgroundColor='pink';
+        document.querySelector('#child-three').style.backgroundColor='pink';
+        document.querySelector('#child-four').style.backgroundColor='pink';
+        */
+       ///////////////////////////////////////////////////
+
+       /*
+
+       document.querySelector('.gparent').style.backgroundColor='green';
+    //    document.querySelector('.parent').style.backgroundColor='red';
+    //    Array.from(document.querySelectorAll('.parent')).forEach(parent=>parent.style.backgroundColor='grey')
+
+        Array.from(document.querySelectorAll('.parent')).forEach((element,index)=>{
+            element.style.backgroundColor='salmon';
+        });
+
+        */
+
+        /////////////////////////////////////////////////////////////
+
+
+        // const p1=document.querySelector('.parent');
+        // p1.style.backgroundColor='green';
+        // let childrens=p1.children;
+        // for(let c of childrens){
+        //     c.style.backgroundColor='grey'
+        // }
+
+
+
+        const p2=document.querySelector('#parent2');
+        const c1=p2.querySelector('#c3');
+        c1.style.backgroundColor='yellow';
+
+
+
+    </script>
+</html>

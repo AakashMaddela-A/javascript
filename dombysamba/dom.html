@@ -1,0 +1,76 @@
+<!-- DOM Manipulations -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            DOM Manipulations
+        </title>
+    </head>
+    <body>
+        <div>
+            <span>Hello</span>
+            <span style="display: none;">Bye</span>
+        </div>
+    </body>
+
+    <script>
+
+        const body=document.body;
+        body.innerText='<h1>Hello</h1>'; // adds the only plain text
+        body.innerHTML='<h1>Hello</h1>'; // adds the html effect also
+
+
+        ///////////////////////////////////////////////////////
+
+        // const div=document.querySelector('div');
+        // console.log(
+        //     div.innerText
+        // );
+        // console.log(
+        //     div.textContent
+        // );
+
+
+
+        // const body=document.body;
+
+        // body.append("hello1");
+        // body.append('hello2');
+        // body.append('hello3');
+
+        /////////////////////////////////////////////
+
+        //append() and appendChild()
+        //append() - text and element
+        //appendChild() --- element
+
+
+        ///////////////////////////////////////////
+
+        // const body=document.body;
+        // //create division
+        // const div=document.createElement('div');
+        // div.innerText='hello1';
+        // body.append(div);
+
+        ////////////////////////////////////////////
+
+
+        // const body=document.body;
+        // body.append('hello1');
+        // const div=document.createElement('div');
+        // div.innerText='hello2';
+        // // body.appendChild(div);
+        // body.append(div);
+
+        //////////////////////////////////////////
+
+        // const body=document.body;
+        // const div=document.createElement('div');
+        // div.innerText='hello1';
+        // div.textContent='hello2';
+        // body.appendChild(div);
+
+    </script>
+</html>

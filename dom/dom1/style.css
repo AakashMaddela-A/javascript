@@ -1,0 +1,20 @@
+/* h1{
+    background-color: red;
+    color:green;
+}
+
+p{
+    background-color: blue;
+} */
+
+
+
+
+p{
+    width:100px;
+    height:100px;
+    background-color: red;
+    border: 5px solid black;
+    scale:0.5;
+    transition: all linear 0.5s;
+}
